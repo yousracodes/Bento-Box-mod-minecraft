@@ -13,6 +13,9 @@ public final class BentoBoxMod {
     public BentoBoxMod() {
         var bus = net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.ITEMS.register(bus);
+        ModContent.BLOCKS.register(bus);
+        ModContent.BLOCK_ENTITIES.register(bus);
+        ModContent.MENUS.register(bus);
         ModCreativeTabs.TABS.register(bus);
         bus.addListener(ModItems::creativeTab);
         LOGGER.info("Bento Box initialized");

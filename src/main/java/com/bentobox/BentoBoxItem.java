@@ -6,20 +6,21 @@ import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
-public final class BentoBoxItem extends Item {
+public final class BentoBoxItem extends BlockItem {
     public static final String OPEN = "BentoOpen";
     public static final String CHANGED = "BentoLidChanged";
     public static final String FROM = "BentoLidFrom";
     public static final float DURATION = 10.0F;
     private final String model;
 
-    public BentoBoxItem(String model) {
-        super(new Item.Properties().stacksTo(1));
+    public BentoBoxItem(String model, Block block) {
+        super(block, new Properties().stacksTo(1));
         this.model = model;
     }
 

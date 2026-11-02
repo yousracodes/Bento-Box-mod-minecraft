@@ -2,6 +2,7 @@ package com.bentobox.client;
 
 import com.bentobox.BentoBoxItem;
 import com.bentobox.BentoBoxMod;
+import com.bentobox.BentoBlock;
 import com.google.gson.Gson;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -55,13 +56,20 @@ public final class BentoItemRenderer extends BlockEntityWithoutLevelRenderer {
                              MultiBufferSource buffers, int light, int overlay) {
         if (!(stack.getItem() instanceof BentoBoxItem item)) return;
         var mc = Minecraft.getInstance();
-        if (resources != mc.getResourceManager()) onResourceManagerReload(mc.getResourceManager());
-        Mesh mesh = meshes.computeIfAbsent(item.model(), this::load);
         double time = mc.level == null ? 0 : mc.level.getGameTime() + mc.getFrameTime();
         float open = BentoBoxItem.openness(stack, time);
+        renderModel(item.model(), open, pose, buffers, light, overlay, 0.25);
+    }
+
+    public void renderModel(String name, float open, PoseStack pose, MultiBufferSource buffers,
+                            int light, int overlay, double height) {
+        var mc = Minecraft.getInstance();
+        if (resources != mc.getResourceManager()) onResourceManagerReload(mc.getResourceManager());
+        Mesh mesh = meshes.computeIfAbsent(name, this::load);
         pose.pushPose();
-        pose.translate(0.5, 0.25, 0.5);
-        pose.scale(0.65F / 16, 0.65F / 16, 0.65F / 16);
+        pose.translate(0.5, height, 0.5);
+        float scale = BentoBlock.renderScale(name.equals("deluxe_bento") ? 9 : 6) / 16;
+        pose.scale(scale, scale, scale);
         for (boolean lid : new boolean[]{false, true}) {
             pose.pushPose();
             if (lid) {
@@ -73,7 +81,7 @@ public final class BentoItemRenderer extends BlockEntityWithoutLevelRenderer {
             for (Face face : mesh.faces) {
                 if (face.lid != lid) continue;
                 VertexConsumer consumer = buffers.getBuffer(RenderType.entityCutoutNoCull(
-                    new ResourceLocation(BentoBoxMod.MOD_ID, "textures/item/" + item.model() + "_" + face.texture + ".png")));
+                    new ResourceLocation(BentoBoxMod.MOD_ID, "textures/item/" + name + "_" + face.texture + ".png")));
                 var transform = pose.last();
                 for (float[] v : face.vertices) {
                     consumer.vertex(transform.pose(), v[0], v[1], v[2]).color(255,255,255,255)

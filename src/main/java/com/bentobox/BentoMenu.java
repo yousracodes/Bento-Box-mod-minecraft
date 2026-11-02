@@ -1,0 +1,59 @@
+package com.bentobox;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.entity.player.*;
+import net.minecraft.world.inventory.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.items.*;
+
+public final class BentoMenu extends AbstractContainerMenu {
+    public final int compartments;
+    private final BentoBlockEntity bento;
+    private final BlockPos pos;
+    public int inventoryY() { return 48 + (compartments / 3) * 30; }
+    public BentoMenu(int id, Inventory inventory, FriendlyByteBuf data) {
+        this(id, inventory, data.readBlockPos(), data.readVarInt(), null);
+    }
+    public BentoMenu(int id, Inventory inventory, BentoBlockEntity bento) {
+        this(id, inventory, bento.getBlockPos(), bento.contents.getSlots(), bento);
+    }
+    private BentoMenu(int id, Inventory inventory, BlockPos pos, int size, BentoBlockEntity bento) {
+        super(ModContent.MENU.get(), id);
+        if (size != 6 && size != 9) throw new IllegalArgumentException("Invalid bento capacity");
+        this.compartments = size;
+        this.bento = bento;
+        this.pos = pos;
+        IItemHandler handler = bento == null ? new ItemStackHandler(size) : bento.contents;
+        for (int i=0; i<size; i++) addSlot(new SlotItemHandler(handler, i, 77 + (i%3)*30, 32 + (i/3)*30) {
+            @Override public boolean mayPlace(ItemStack stack) { return BentoBlockEntity.validFood(stack); }
+            @Override public void setChanged() {
+                super.setChanged();
+                // Vanilla transfers may grow a stack directly rather than call insertItem.
+                if (bento != null) bento.setChanged();
+            }
+        });
+        for (int row=0; row<3; row++) for (int col=0; col<9; col++)
+            addSlot(new Slot(inventory, col+row*9+9, 17+col*22, inventoryY()+row*22));
+        for (int col=0; col<9; col++) addSlot(new Slot(inventory, col, 17+col*22, inventoryY()+72));
+    }
+    @Override public boolean stillValid(Player player) {
+        return bento == null || (!bento.isRemoved() && player.level().getBlockEntity(pos) == bento && player.distanceToSqr(pos.getX()+0.5,pos.getY()+0.5,pos.getZ()+0.5)<=64);
+    }
+    @Override public ItemStack quickMoveStack(Player player, int index) {
+        if (!stillValid(player) || index<0 || index>=slots.size()) return ItemStack.EMPTY;
+        Slot slot = slots.get(index);
+        if (!slot.hasItem()) return ItemStack.EMPTY;
+        ItemStack stack = slot.getItem();
+        ItemStack original = stack.copy();
+        if (index < compartments) {
+            if (!moveItemStackTo(stack, compartments, slots.size(), true)) return ItemStack.EMPTY;
+        } else if (!BentoBlockEntity.validFood(stack) || !moveItemStackTo(stack, 0, compartments, false)) return ItemStack.EMPTY;
+        if (stack.isEmpty()) slot.set(ItemStack.EMPTY); else slot.setChanged();
+        slot.onTake(player, stack);
+        return original;
+    }
+    @Override public void clicked(int slot, int button, ClickType type, Player player) {
+        if (stillValid(player)) super.clicked(slot, button, type, player);
+    }
+}
