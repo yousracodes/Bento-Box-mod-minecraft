@@ -30,7 +30,7 @@ public final class BentoMenu extends AbstractContainerMenu {
             @Override public void setChanged() {
                 super.setChanged();
                 // Vanilla transfers may grow a stack directly rather than call insertItem.
-                if (bento != null) bento.setChanged();
+                if (bento != null) bento.changed();
             }
         });
         for (int row=0; row<3; row++) for (int col=0; col<9; col++)

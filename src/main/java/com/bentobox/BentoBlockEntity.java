@@ -56,7 +56,7 @@ public final class BentoBlockEntity extends BlockEntity implements MenuProvider 
         tag.putBoolean(BentoBoxItem.OPEN, !tag.getBoolean(BentoBoxItem.OPEN));
         changed();
     }
-    private void changed() {
+    public void changed() {
         setChanged();
         if (level != null && !level.isClientSide) level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
     }

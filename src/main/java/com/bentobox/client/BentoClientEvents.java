@@ -23,5 +23,6 @@ public final class BentoClientEvents {
     @SubscribeEvent
     public static void reloadListeners(RegisterClientReloadListenersEvent event) {
         event.registerReloadListener(BentoItemRenderer.instance());
+        event.registerReloadListener(BentoFoodDisplays.INSTANCE);
     }
 }

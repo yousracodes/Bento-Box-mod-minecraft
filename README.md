@@ -61,6 +61,33 @@ dragging and shift-clicking transfer food. Non-food items and nested bentos are
 rejected; normal stack limits and item NBT are preserved. Storage persists through
 world saves, dropping, picking up and placing again. Removing a box invalidates
 its open menus. Lid state is independent of whether the inventory screen is open.
+Open placed boxes display the stored food icons inside their matching compartments.
+Larger stacks appear as taller piles (up to six visual layers); these layers represent
+the stack quantity and do not create extra items. Food uses its own item textures,
+including resource-pack overrides and standard modded food models. Closing the lid
+hides the food. Changes made through the GUI synchronize the world display.
+
+When a compartment contains **exactly one** standard `BlockItem` food, it displays
+the associated placed block model instead of the flat icon. The model is centered
+and scaled uniformly to fit. Two or more items use the existing texture pile.
+Items without a supported static block model keep their normal item appearance;
+block-entity-only renderers are not used. This does not place real blocks or change
+which foods the bento accepts.
+
+Custom placement foods can be mapped through a resource pack. Add one JSON file
+per mapping under `assets/<namespace>/bento_food_displays/<name>.json`, for example:
+
+```json
+{
+  "item": "example_food_mod:rice_meal",
+  "block": "example_food_mod:placed_rice_meal",
+  "properties": { "facing": "north" }
+}
+```
+
+Replace the example IDs with the food mod's real IDs. `properties` is optional.
+Mappings override automatic block detection and are client resources, reloadable
+with F3+T. Missing optional mods are skipped. No extra food mod is required.
 Eating directly from the box and crafting are not implemented yet.
 
 Run `.\bento.bat runGameTestServer` for the server integration tests covering both
