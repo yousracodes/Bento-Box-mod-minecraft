@@ -12,9 +12,9 @@ public final class BentoMenu extends AbstractContainerMenu {
     private final BentoBlockEntity bento;
     private final BlockPos pos;
     public int columns() { return compartments == 4 ? 2 : 3; }
-    public int foodSlotX(int slot) { return 77 + (3 - columns()) * 15 + (slot % columns()) * 30; }
-    public int foodSlotY(int slot) { return 32 + (slot / columns()) * 30; }
-    public int inventoryY() { return 48 + (compartments / columns()) * 30; }
+    public int foodSlotX(int slot) { return (176 - columns() * 18) / 2 + 1 + (slot % columns()) * 18; }
+    public int foodSlotY(int slot) { return 18 + (slot / columns()) * 18; }
+    public int inventoryY() { return 31 + (compartments / columns()) * 18; }
     public BentoMenu(int id, Inventory inventory, FriendlyByteBuf data) {
         this(id, inventory, data.readBlockPos(), data.readVarInt(), null);
     }
@@ -37,8 +37,8 @@ public final class BentoMenu extends AbstractContainerMenu {
             }
         });
         for (int row=0; row<3; row++) for (int col=0; col<9; col++)
-            addSlot(new Slot(inventory, col+row*9+9, 17+col*22, inventoryY()+row*22));
-        for (int col=0; col<9; col++) addSlot(new Slot(inventory, col, 17+col*22, inventoryY()+72));
+            addSlot(new Slot(inventory, col+row*9+9, 8+col*18, inventoryY()+row*18));
+        for (int col=0; col<9; col++) addSlot(new Slot(inventory, col, 8+col*18, inventoryY()+58));
     }
     @Override public boolean stillValid(Player player) {
         return bento == null || (!bento.isRemoved() && player.level().getBlockEntity(pos) == bento && player.distanceToSqr(pos.getX()+0.5,pos.getY()+0.5,pos.getZ()+0.5)<=64);

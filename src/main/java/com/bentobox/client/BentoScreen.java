@@ -4,65 +4,68 @@ import com.bentobox.BentoMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-/** Pixel-drawn cherry stationery panel inspired by the supplied GUI reference. */
+/** Vanilla container frame and slots, with the bento's pixel decorations retained. */
 public final class BentoScreen extends AbstractContainerScreen<BentoMenu> {
+    private static final ResourceLocation CONTAINER = new ResourceLocation("minecraft", "textures/gui/container/generic_54.png");
+
     public BentoScreen(BentoMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
-        imageWidth = 230;
-        imageHeight = menu.inventoryY() + 98;
-        titleLabelX = 40;
-        titleLabelY = 12;
-        inventoryLabelX = 15;
-        inventoryLabelY = menu.inventoryY() - 12;
+        imageWidth = 176;
+        imageHeight = menu.inventoryY() + 83;
+        titleLabelX = 32;
+        titleLabelY = 6;
+        inventoryLabelX = 8;
+        inventoryLabelY = menu.inventoryY() - 11;
     }
+
     @Override protected void renderBg(GuiGraphics g, float partialTick, int mouseX, int mouseY) {
-        int x=leftPos, y=topPos;
-        g.fill(x-2,y+2,x+imageWidth+2,y+imageHeight-2,0xFF322C30);
-        g.fill(x+2,y-2,x+imageWidth-2,y+imageHeight+2,0xFF322C30);
-        g.fill(x,y,x+imageWidth,y+imageHeight,0xFFF8F0EB);
-        g.fill(x+3,y+3,x+imageWidth-3,y+imageHeight-3,0xFFE5DAD8);
-        g.fill(x+3,y+3,x+imageWidth-3,y+5,0xFFFFFFFF);
-        g.fill(x+imageWidth-5,y+5,x+imageWidth-3,y+imageHeight-3,0xFFB4A3AA);
-        // Tiny lunchbox emblem.
-        g.fill(x+13,y+12,x+33,y+26,0xFF6D393D);
-        g.fill(x+15,y+10,x+31,y+23,0xFFC47779);
-        g.fill(x+17,y+12,x+29,y+18,0xFFF8EBCF);
-        g.fill(x+19,y+12,x+23,y+16,0xFF91A17B);
-        g.fill(x+25,y+14,x+29,y+18,0xFFD69A98);
-        // Cherry branch and pixel blossoms.
-        for(int i=0;i<6;i++) g.fill(x+190+i*4,y+25-i*3,x+196+i*4,y+28-i*3,0xFF765449);
-        flower(g,x+194,y+18); flower(g,x+210,y+10); flower(g,x+204,y+29);
-        flower(g,x+25,y+65); flower(g,x+202,y+73);
-        for(int i=0;i<menu.compartments;i++) slot(g,x+menu.foodSlotX(i)-7,y+menu.foodSlotY(i)-7,30);
-        for(int row=0;row<3;row++) for(int col=0;col<9;col++) slot(g,x+15+col*22,y+menu.inventoryY()-2+row*22,20);
-        for(int col=0;col<9;col++) slot(g,x+15+col*22,y+menu.inventoryY()+70,20);
-        // Rice ball and cat ears sit beside the food compartments.
-        int base=y+menu.inventoryY()-20;
-        g.fill(x+192,base-12,x+198,base-8,0xFF80645D);
-        g.fill(x+188,base-8,x+202,base+2,0xFF80645D);
-        g.fill(x+190,base-7,x+200,base,0xFFFFF0D9);
-        g.fill(x+193,base-3,x+198,base+2,0xFF39403B);
+        int x = leftPos, y = topPos;
+        int trayHeight = (menu.compartments / menu.columns()) * 18;
+        // Use Minecraft's own frame, inset slots, inventory, and hotbar textures.
+        g.blit(CONTAINER, x, y, 0, 0, imageWidth, 17);
+        g.fill(x+7, y+17, x+169, y+17+trayHeight, 0xFFC6C6C6);
+        g.blit(CONTAINER, x, y+17, 0, 17, 7, trayHeight);
+        g.blit(CONTAINER, x+169, y+17, 169, 17, 7, trayHeight);
+        g.blit(CONTAINER, x, y+17+trayHeight, 0, 126, imageWidth, 96);
+        for (int slot = 0; slot < menu.compartments; slot++)
+            g.blit(CONTAINER, x+menu.foodSlotX(slot)-1, y+menu.foodSlotY(slot)-1, 7, 17, 18, 18);
+
+        // Small bento emblem beside the title.
+        g.fill(x+8,y+5,x+27,y+16,0xFF6D393D);
+        g.fill(x+10,y+3,x+25,y+14,0xFFC47779);
+        g.fill(x+12,y+5,x+23,y+10,0xFFF8EBCF);
+        g.fill(x+13,y+5,x+17,y+9,0xFF91A17B);
+        g.fill(x+19,y+7,x+23,y+10,0xFFD69A98);
+        // Cherry branch and blossoms stay outside the slot grid.
+        for (int i=0;i<5;i++) g.fill(x+137+i*4,y+17-i*2,x+143+i*4,y+19-i*2,0xFF765449);
+        flower(g,x+141,y+10);
+        flower(g,x+155,y+4);
+        flower(g,x+23,y+25);
+        flower(g,x+146,y+25);
+
+        // Cat and rice ball sit alongside the bottom row of food slots.
+        int base = y+17+trayHeight-5;
+        g.fill(x+140,base-12,x+146,base-8,0xFF80645D);
+        g.fill(x+136,base-8,x+150,base+2,0xFF80645D);
+        g.fill(x+138,base-7,x+148,base,0xFFFFF0D9);
+        g.fill(x+141,base-3,x+146,base+2,0xFF39403B);
         g.fill(x+20,base-9,x+24,base-2,0xFF80645D);
         g.fill(x+33,base-9,x+37,base-2,0xFF80645D);
         g.fill(x+20,base-3,x+37,base+3,0xFFFFE4CE);
         g.fill(x+24,base,x+26,base+2,0xFF59403D);
         g.fill(x+31,base,x+33,base+2,0xFF59403D);
     }
-    private void slot(GuiGraphics g,int x,int y,int size) {
-        g.fill(x,y,x+size,y+size,0xFF807778);
-        g.fill(x+1,y+1,x+size-1,y+size-1,0xFFAAA0A0);
-        g.fill(x+2,y+2,x+size-1,y+size-1,0xFFBEB4B0);
-        g.fill(x+1,y+size-1,x+size,y+size,0xFFFFF6F0);
-        g.fill(x+size-1,y+1,x+size,y+size,0xFFFFF6F0);
-    }
-    private void flower(GuiGraphics g,int x,int y) {
+
+    private void flower(GuiGraphics g, int x, int y) {
         g.fill(x+2,y,x+6,y+8,0xFFE6A4B4);
         g.fill(x,y+2,x+8,y+6,0xFFE6A4B4);
         g.fill(x+3,y+3,x+5,y+5,0xFFFFD8D5);
     }
-    @Override public void render(GuiGraphics g,int mouseX,int mouseY,float partialTick) {
+
+    @Override public void render(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         renderBackground(g);
         super.render(g,mouseX,mouseY,partialTick);
         renderTooltip(g,mouseX,mouseY);

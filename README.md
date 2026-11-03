@@ -57,7 +57,9 @@ Right-click a block face with a bento to place it. Placed boxes face the player.
 - **Right-click a placed box:** open its food inventory (Compact 2x2, Classic 3x2, Deluxe 3x3).
 - **Left-click a placed box:** drop it as a single item, keeping its food and appearance.
 
-The cherry-themed GUI includes the player's inventory and hotbar. Standard clicking,
+The GUI uses Minecraft's standard gray container frame, 18-pixel slot spacing,
+player inventory, and hotbar, while retaining the bento, blossom, cat, and rice-ball
+pixel decorations. Standard clicking,
 dragging and shift-clicking transfer food. Non-food items and nested bentos are
 rejected; normal stack limits and item NBT are preserved. Storage persists through
 world saves, dropping, picking up and placing again. Removing a box invalidates
