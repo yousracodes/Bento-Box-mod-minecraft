@@ -116,20 +116,25 @@ inside either placed bento. Open its lid to see the block, then increase the cou
 to two to check the texture-pile fallback. The catalog is in
 `docs/displaydelight-food-catalog.md`; installed mod versions control the actual
 available associations. Other Display Delight versions may require bridge updates.
-Bento box crafting is not implemented yet.
+All three bento boxes can be crafted at a crafting table using eight cherry planks
+around a center ingredient:
+
+| Bento box | Compartments | Center ingredient |
+| --- | --- | --- |
+| Compact | 4 | Copper ingot |
+| Classic | 6 | Iron ingot |
+| Deluxe | 9 | Diamond |
+
+Each recipe produces one empty bento. Collecting cherry planks unlocks these recipes
+in the recipe book.
 
 Run `.\bento.bat runGameTestServer` for the server integration tests covering all three
 capacities, food validation, stack limits, NBT persistence, shift-click transfers,
 pickup drops, and menu invalidation. Test sources are excluded from the release JAR.
 
-The import script `tools/import_models.py` converts the two original `.bbmodel`
-files into render meshes and extracts their embedded PNGs. Originals are untouched.
-To reimport, run `python tools/import_models.py <6-slot.bbmodel> <9-slot.bbmodel>`.
-
 The Compact mesh is derived from Classic by removing the middle column and shortening
 the body and animated lid by six model units (about 27% narrower). It reuses the
-cherry textures and keeps the same compartment depth and height. After reimporting
-the originals, run `python tools/make_compact_model.py` to regenerate it.
+cherry textures and keeps the same compartment depth and height.
 
 Future assets go in `src/main/resources/assets/bentobox/` and recipes/data go in
 `src/main/resources/data/bentobox/`.
@@ -168,8 +173,7 @@ its embedded texture, tapered geometry, and diagonal presentation. Each stick pi
 at its grip and opens over six ticks when food is picked up. The actual carried food
 appears centered between the spreading tips, in inventory, hand, dropped-item, and
 item-frame views. Eating empties the chopsticks and returns them to the resting pose.
-The mesh and texture reload with F3+T. Regenerate these assets with
-`python tools/import_chopsticks.py` after editing the source model.
+The mesh and texture reload with F3+T.
 
 Hand views anchor the thick grip ends inside the player's palm. In third person,
 the sticks extend forward and slightly downward with the food between their tips;

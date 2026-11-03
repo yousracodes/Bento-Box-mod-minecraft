@@ -1,0 +1,21 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "category":  "misc",
+    "pattern":  [
+                    "PPP",
+                    "PMP",
+                    "PPP"
+                ],
+    "key":  {
+                "P":  {
+                          "item":  "minecraft:cherry_planks"
+                      },
+                "M":  {
+                          "item":  "minecraft:copper_ingot"
+                      }
+            },
+    "result":  {
+                   "count":  1,
+                   "item":  "bentobox:compact_bento"
+               }
+}
