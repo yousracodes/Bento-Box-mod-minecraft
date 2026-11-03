@@ -1,6 +1,7 @@
 package com.bentobox.client;
 
 import com.bentobox.BentoBoxMod;
+import com.bentobox.compat.DisplayDelightCompat;
 import com.google.gson.*;
 import java.util.*;
 import net.minecraft.client.Minecraft;
@@ -57,8 +58,15 @@ public final class BentoFoodDisplays extends SimpleJsonResourceReloadListener {
     public Optional<Display> find(ItemStack stack) {
         if (stack.getCount() != 1) return Optional.empty();
         BlockState state = mappings.get(ForgeRegistries.ITEMS.getKey(stack.getItem()));
+        if (state == null) {
+            var block = DisplayDelightCompat.findBlock(stack);
+            if (block != null) state = block.defaultBlockState();
+        }
         if (state == null && stack.getItem() instanceof BlockItem item) state = item.getBlock().defaultBlockState();
         if (state == null || state.getRenderShape() != RenderShape.MODEL) return Optional.empty();
+        // Display Delight defaults several plated blocks to six servings, even
+        // though this branch is only used when the compartment holds one item.
+        state = DisplayDelightCompat.singleServingState(state);
         return displays.computeIfAbsent(state, this::measure);
     }
 

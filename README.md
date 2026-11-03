@@ -88,6 +88,33 @@ per mapping under `assets/<namespace>/bento_food_displays/<name>.json`, for exam
 Replace the example IDs with the food mod's real IDs. `properties` is optional.
 Mappings override automatic block detection and are client resources, reloadable
 with F3+T. Missing optional mods are skipped. No extra food mod is required.
+
+### Display Delight integration
+
+When Display Delight 1.4.x is installed, Bento Box reads its own live food-to-block
+associations automatically, including supported add-on foods. No individual JSON
+files are needed. Explicit JSON mappings take priority; otherwise the integration
+prefers a direct food display, then a small plate, then a regular plate. Standard
+BlockItem detection remains available as a fallback. Foods still have to pass the
+bento's edible-item check, and only single items use block models.
+Display Delight models with a `stacks` property are rendered with `stacks=1`,
+regardless of their default serving count. Unsupported
+renderers fall back to the food icon. Display Delight is optional and is not bundled.
+
+For development testing, put `displaydelight-1.4.0.jar` and
+`FarmersDelight-1.20.1-1.2.6.jar` into `libs/` (not `run/mods/`), then run:
+
+```powershell
+.\bento.bat -PdisplayDelightCompat runGameTestServer
+.\bento.bat -PdisplayDelightCompat runClient
+```
+
+This profile remaps the production jars for the development environment. Test one
+`farmersdelight:beef_stew`, `farmersdelight:cake_slice`, or `farmersdelight:hamburger`
+inside either placed bento. Open its lid to see the block, then increase the count
+to two to check the texture-pile fallback. The catalog is in
+`docs/displaydelight-food-catalog.md`; installed mod versions control the actual
+available associations. Other Display Delight versions may require bridge updates.
 Eating directly from the box and crafting are not implemented yet.
 
 Run `.\bento.bat runGameTestServer` for the server integration tests covering both

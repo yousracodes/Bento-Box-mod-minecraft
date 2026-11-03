@@ -61,6 +61,10 @@ minecraft {
         // applies to all the run configs below
         configureEach {
             workingDirectory project.file('run')
+            if (providers.gradleProperty('displayDelightCompat').isPresent()) {
+                property 'mixin.env.remapRefMap', 'true'
+                property 'mixin.env.refMapRemappingFile', file('build/createSrgToMcp/output.srg').absolutePath
+            }
 
             // Recommended logging data for a userdev environment
             // The markers can be added/remove as needed separated by commas.
@@ -124,6 +128,7 @@ minecraft.runs.gameTestServer.mods {
 }
 
 repositories {
+    flatDir { dirs 'libs' }
     // Put repositories for dependencies here
     // ForgeGradle automatically adds the Forge maven and Maven Central for you
 
@@ -135,6 +140,11 @@ repositories {
 }
 
 dependencies {
+    // Optional local compatibility test profile; external jars are not bundled.
+    if (providers.gradleProperty('displayDelightCompat').isPresent()) {
+        runtimeOnly fg.deobf('local:displaydelight:1.4.0')
+        runtimeOnly fg.deobf('local:FarmersDelight:1.20.1-1.2.6')
+    }
     // Specify the version of Minecraft to use.
     // Any artifact can be supplied so long as it has a "userdev" classifier artifact and is a compatible patcher artifact.
     // The "userdev" classifier will be requested and setup by ForgeGradle.
