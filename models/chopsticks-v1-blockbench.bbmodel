@@ -1,0 +1,2927 @@
+{
+  "meta": {
+    "format_version": "4.10",
+    "model_format": "free",
+    "box_uv": false
+  },
+  "name": "chopsticks",
+  "model_identifier": "chopsticks",
+  "resolution": {
+    "width": 512,
+    "height": 512
+  },
+  "elements": [
+    {
+      "name": "L_Grip",
+      "uuid": "00000000-0000-4000-8000-000000000005",
+      "type": "cube",
+      "from": [
+        -0.0023999999999999577,
+        5.775,
+        -0.3124
+      ],
+      "to": [
+        0.6224000000000001,
+        6.775,
+        0.3124
+      ],
+      "origin": [
+        0.31000000000000005,
+        6.275,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            32
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            32
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            0,
+            64,
+            32
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            0,
+            32,
+            32
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            64,
+            0,
+            80,
+            16
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            80,
+            0,
+            96,
+            16
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Shaft0",
+      "uuid": "00000000-0000-4000-8000-000000000007",
+      "type": "cube",
+      "from": [
+        -0.0023999999999999577,
+        0.5249999999999999,
+        0.234375
+      ],
+      "to": [
+        0.6224000000000001,
+        5.775,
+        0.234375
+      ],
+      "origin": [
+        0.31000000000000005,
+        3.1500000000000004,
+        0.234375
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            48,
+            32,
+            288
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Shaft1",
+      "uuid": "00000000-0000-4000-8000-000000000009",
+      "type": "cube",
+      "from": [
+        0.23197500000000004,
+        0.5249999999999999,
+        0
+      ],
+      "to": [
+        0.8567750000000001,
+        5.775,
+        0
+      ],
+      "origin": [
+        0.544375,
+        3.1500000000000004,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            48,
+            64,
+            288
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Shaft2",
+      "uuid": "00000000-0000-4000-8000-00000000000b",
+      "type": "cube",
+      "from": [
+        -0.0023999999999999577,
+        0.5249999999999999,
+        -0.234375
+      ],
+      "to": [
+        0.6224000000000001,
+        5.775,
+        -0.234375
+      ],
+      "origin": [
+        0.31000000000000005,
+        3.1500000000000004,
+        -0.234375
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            64,
+            48,
+            96,
+            288
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Shaft3",
+      "uuid": "00000000-0000-4000-8000-00000000000d",
+      "type": "cube",
+      "from": [
+        -0.236775,
+        0.5249999999999999,
+        0
+      ],
+      "to": [
+        0.388025,
+        5.775,
+        0
+      ],
+      "origin": [
+        0.075625,
+        3.1500000000000004,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            96,
+            48,
+            128,
+            288
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Tip",
+      "uuid": "00000000-0000-4000-8000-00000000000f",
+      "type": "cube",
+      "from": [
+        0.1538,
+        0.2749999999999999,
+        -0.1562
+      ],
+      "to": [
+        0.4662,
+        0.5249999999999999,
+        0.1562
+      ],
+      "origin": [
+        0.31,
+        0.3999999999999999,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            176,
+            0,
+            184,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            160,
+            0,
+            168,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            184,
+            0,
+            192,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            168,
+            0,
+            176,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            192,
+            0,
+            200,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            200,
+            0,
+            208,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Core0",
+      "uuid": "00000000-0000-4000-8000-000000000011",
+      "type": "cube",
+      "from": [
+        0.1612,
+        0.5099999999999999,
+        -0.1488
+      ],
+      "to": [
+        0.4588,
+        1.29,
+        0.1488
+      ],
+      "origin": [
+        0.31,
+        0.8999999999999999,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            320,
+            48,
+            344
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            320,
+            16,
+            344
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            320,
+            64,
+            344
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            320,
+            32,
+            344
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            64,
+            320,
+            80,
+            336
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            80,
+            320,
+            96,
+            336
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Core1",
+      "uuid": "00000000-0000-4000-8000-000000000013",
+      "type": "cube",
+      "from": [
+        0.13899999999999996,
+        1.2599999999999998,
+        -0.171
+      ],
+      "to": [
+        0.481,
+        2.04,
+        0.171
+      ],
+      "origin": [
+        0.30999999999999994,
+        1.65,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            344,
+            48,
+            368
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            344,
+            16,
+            368
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            344,
+            64,
+            368
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            344,
+            32,
+            368
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            64,
+            344,
+            80,
+            360
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            80,
+            344,
+            96,
+            360
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Core2",
+      "uuid": "00000000-0000-4000-8000-000000000015",
+      "type": "cube",
+      "from": [
+        0.11659999999999998,
+        2.01,
+        -0.1934
+      ],
+      "to": [
+        0.5034,
+        2.79,
+        0.1934
+      ],
+      "origin": [
+        0.30999999999999994,
+        2.4,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            368,
+            48,
+            392
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            368,
+            16,
+            392
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            368,
+            64,
+            392
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            368,
+            32,
+            392
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            64,
+            368,
+            80,
+            384
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            80,
+            368,
+            96,
+            384
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Core3",
+      "uuid": "00000000-0000-4000-8000-000000000017",
+      "type": "cube",
+      "from": [
+        0.09420000000000006,
+        2.76,
+        -0.2158
+      ],
+      "to": [
+        0.5258,
+        3.54,
+        0.2158
+      ],
+      "origin": [
+        0.31000000000000005,
+        3.15,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            392,
+            48,
+            416
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            392,
+            16,
+            416
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            392,
+            64,
+            416
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            392,
+            32,
+            416
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            64,
+            392,
+            80,
+            408
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            80,
+            392,
+            96,
+            408
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Core4",
+      "uuid": "00000000-0000-4000-8000-000000000019",
+      "type": "cube",
+      "from": [
+        0.07200000000000006,
+        3.51,
+        -0.238
+      ],
+      "to": [
+        0.548,
+        4.29,
+        0.238
+      ],
+      "origin": [
+        0.31000000000000005,
+        3.9,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            416,
+            48,
+            440
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            416,
+            16,
+            440
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            416,
+            64,
+            440
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            416,
+            32,
+            440
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            64,
+            416,
+            80,
+            432
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            80,
+            416,
+            96,
+            432
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Core5",
+      "uuid": "00000000-0000-4000-8000-00000000001b",
+      "type": "cube",
+      "from": [
+        0.04959999999999998,
+        4.260000000000001,
+        -0.2604
+      ],
+      "to": [
+        0.5704,
+        5.040000000000001,
+        0.2604
+      ],
+      "origin": [
+        0.31,
+        4.65,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            440,
+            48,
+            464
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            440,
+            16,
+            464
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            440,
+            64,
+            464
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            440,
+            32,
+            464
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            64,
+            440,
+            80,
+            456
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            80,
+            440,
+            96,
+            456
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "L_Core6",
+      "uuid": "00000000-0000-4000-8000-00000000001d",
+      "type": "cube",
+      "from": [
+        0.02739999999999998,
+        5.010000000000001,
+        -0.2826
+      ],
+      "to": [
+        0.5926,
+        5.790000000000001,
+        0.2826
+      ],
+      "origin": [
+        0.31,
+        5.4,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            464,
+            48,
+            488
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            464,
+            16,
+            488
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            464,
+            64,
+            488
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            464,
+            32,
+            488
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            64,
+            464,
+            80,
+            480
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            80,
+            464,
+            96,
+            480
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Grip",
+      "uuid": "00000000-0000-4000-8000-000000000020",
+      "type": "cube",
+      "from": [
+        -0.6224000000000001,
+        5.725,
+        -0.3124
+      ],
+      "to": [
+        0.0023999999999999577,
+        6.725,
+        0.3124
+      ],
+      "origin": [
+        -0.31000000000000005,
+        6.225,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            0,
+            32,
+            32
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            0,
+            0,
+            32
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            16,
+            32
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            64,
+            0,
+            48,
+            32
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            80,
+            0,
+            64,
+            16
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            96,
+            0,
+            80,
+            16
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Shaft0",
+      "uuid": "00000000-0000-4000-8000-000000000022",
+      "type": "cube",
+      "from": [
+        -0.6224000000000001,
+        0.4750000000000001,
+        0.234375
+      ],
+      "to": [
+        0.0023999999999999577,
+        5.725,
+        0.234375
+      ],
+      "origin": [
+        -0.31000000000000005,
+        3.0999999999999996,
+        0.234375
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            48,
+            0,
+            288
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Shaft1",
+      "uuid": "00000000-0000-4000-8000-000000000024",
+      "type": "cube",
+      "from": [
+        -0.388025,
+        0.4750000000000001,
+        0
+      ],
+      "to": [
+        0.236775,
+        5.725,
+        0
+      ],
+      "origin": [
+        -0.075625,
+        3.0999999999999996,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            128,
+            48,
+            96,
+            288
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Shaft2",
+      "uuid": "00000000-0000-4000-8000-000000000026",
+      "type": "cube",
+      "from": [
+        -0.6224000000000001,
+        0.4750000000000001,
+        -0.234375
+      ],
+      "to": [
+        0.0023999999999999577,
+        5.725,
+        -0.234375
+      ],
+      "origin": [
+        -0.31000000000000005,
+        3.0999999999999996,
+        -0.234375
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            96,
+            48,
+            64,
+            288
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Shaft3",
+      "uuid": "00000000-0000-4000-8000-000000000028",
+      "type": "cube",
+      "from": [
+        -0.8567750000000001,
+        0.4750000000000001,
+        0
+      ],
+      "to": [
+        -0.23197500000000004,
+        5.725,
+        0
+      ],
+      "origin": [
+        -0.544375,
+        3.0999999999999996,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            64,
+            48,
+            32,
+            288
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "texture": null,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Tip",
+      "uuid": "00000000-0000-4000-8000-00000000002a",
+      "type": "cube",
+      "from": [
+        -0.4662,
+        0.2250000000000001,
+        -0.1562
+      ],
+      "to": [
+        -0.1538,
+        0.4750000000000001,
+        0.1562
+      ],
+      "origin": [
+        -0.31,
+        0.3500000000000001,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            184,
+            0,
+            176,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            168,
+            0,
+            160,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            176,
+            0,
+            168,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            192,
+            0,
+            184,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            200,
+            0,
+            192,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            208,
+            0,
+            200,
+            8
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Core0",
+      "uuid": "00000000-0000-4000-8000-00000000002c",
+      "type": "cube",
+      "from": [
+        -0.4588,
+        0.4600000000000001,
+        -0.1488
+      ],
+      "to": [
+        -0.1612,
+        1.2400000000000002,
+        0.1488
+      ],
+      "origin": [
+        -0.31,
+        0.8500000000000001,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            320,
+            32,
+            344
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            320,
+            0,
+            344
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            320,
+            16,
+            344
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            64,
+            320,
+            48,
+            344
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            80,
+            320,
+            64,
+            336
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            96,
+            320,
+            80,
+            336
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Core1",
+      "uuid": "00000000-0000-4000-8000-00000000002e",
+      "type": "cube",
+      "from": [
+        -0.481,
+        1.21,
+        -0.171
+      ],
+      "to": [
+        -0.13899999999999996,
+        1.99,
+        0.171
+      ],
+      "origin": [
+        -0.30999999999999994,
+        1.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            344,
+            32,
+            368
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            344,
+            0,
+            368
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            344,
+            16,
+            368
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            64,
+            344,
+            48,
+            368
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            80,
+            344,
+            64,
+            360
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            96,
+            344,
+            80,
+            360
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Core2",
+      "uuid": "00000000-0000-4000-8000-000000000030",
+      "type": "cube",
+      "from": [
+        -0.5034,
+        1.96,
+        -0.1934
+      ],
+      "to": [
+        -0.11659999999999998,
+        2.74,
+        0.1934
+      ],
+      "origin": [
+        -0.30999999999999994,
+        2.35,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            368,
+            32,
+            392
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            368,
+            0,
+            392
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            368,
+            16,
+            392
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            64,
+            368,
+            48,
+            392
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            80,
+            368,
+            64,
+            384
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            96,
+            368,
+            80,
+            384
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Core3",
+      "uuid": "00000000-0000-4000-8000-000000000032",
+      "type": "cube",
+      "from": [
+        -0.5258,
+        2.71,
+        -0.2158
+      ],
+      "to": [
+        -0.09420000000000006,
+        3.49,
+        0.2158
+      ],
+      "origin": [
+        -0.31000000000000005,
+        3.1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            392,
+            32,
+            416
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            392,
+            0,
+            416
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            392,
+            16,
+            416
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            64,
+            392,
+            48,
+            416
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            80,
+            392,
+            64,
+            408
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            96,
+            392,
+            80,
+            408
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Core4",
+      "uuid": "00000000-0000-4000-8000-000000000034",
+      "type": "cube",
+      "from": [
+        -0.548,
+        3.46,
+        -0.238
+      ],
+      "to": [
+        -0.07200000000000006,
+        4.24,
+        0.238
+      ],
+      "origin": [
+        -0.31000000000000005,
+        3.85,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            416,
+            32,
+            440
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            416,
+            0,
+            440
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            416,
+            16,
+            440
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            64,
+            416,
+            48,
+            440
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            80,
+            416,
+            64,
+            432
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            96,
+            416,
+            80,
+            432
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Core5",
+      "uuid": "00000000-0000-4000-8000-000000000036",
+      "type": "cube",
+      "from": [
+        -0.5704,
+        4.21,
+        -0.2604
+      ],
+      "to": [
+        -0.04959999999999998,
+        4.99,
+        0.2604
+      ],
+      "origin": [
+        -0.31,
+        4.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            440,
+            32,
+            464
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            440,
+            0,
+            464
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            440,
+            16,
+            464
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            64,
+            440,
+            48,
+            464
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            80,
+            440,
+            64,
+            456
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            96,
+            440,
+            80,
+            456
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "name": "R_Core6",
+      "uuid": "00000000-0000-4000-8000-000000000038",
+      "type": "cube",
+      "from": [
+        -0.5926,
+        4.96,
+        -0.2826
+      ],
+      "to": [
+        -0.02739999999999998,
+        5.74,
+        0.2826
+      ],
+      "origin": [
+        -0.31,
+        5.35,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "rescale": false,
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            464,
+            32,
+            488
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            464,
+            0,
+            488
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            464,
+            16,
+            488
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "east": {
+          "uv": [
+            64,
+            464,
+            48,
+            488
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "up": {
+          "uv": [
+            80,
+            464,
+            64,
+            480
+          ],
+          "texture": 0,
+          "rotation": 0
+        },
+        "down": {
+          "uv": [
+            96,
+            464,
+            80,
+            480
+          ],
+          "texture": 0,
+          "rotation": 0
+        }
+      }
+    }
+  ],
+  "outliner": [
+    {
+      "uuid": "00000000-0000-4000-8000-000000000001",
+      "name": "Origin",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "export": true,
+      "children": [
+        {
+          "uuid": "00000000-0000-4000-8000-000000000002",
+          "name": "Display",
+          "origin": [
+            0,
+            3.5,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -38.0041434515606
+          ],
+          "export": true,
+          "children": [
+            {
+              "uuid": "00000000-0000-4000-8000-000000000003",
+              "name": "L_Stick",
+              "origin": [
+                0.31,
+                0.2749999999999999,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                -1.799119561941137
+              ],
+              "export": true,
+              "children": [
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000004",
+                  "name": "L_Grip",
+                  "origin": [
+                    0.31,
+                    6.275,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000005"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000006",
+                  "name": "L_Shaft0",
+                  "origin": [
+                    0.31,
+                    3.15,
+                    0.234375
+                  ],
+                  "rotation": [
+                    1.707458612567308,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000007"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000008",
+                  "name": "L_Shaft1",
+                  "origin": [
+                    0.544375,
+                    3.15,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    89.99999914622636,
+                    -1.7017297294605556
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000009"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-00000000000a",
+                  "name": "L_Shaft2",
+                  "origin": [
+                    0.31,
+                    3.15,
+                    -0.234375
+                  ],
+                  "rotation": [
+                    -178.2925413874327,
+                    0,
+                    180
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-00000000000b"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-00000000000c",
+                  "name": "L_Shaft3",
+                  "origin": [
+                    0.075625,
+                    3.15,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    -89.99999914622636,
+                    1.7017297294605556
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-00000000000d"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-00000000000e",
+                  "name": "L_Tip",
+                  "origin": [
+                    0.31,
+                    0.3999999999999999,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-00000000000f"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000010",
+                  "name": "L_Core0",
+                  "origin": [
+                    0.31,
+                    0.8999999999999999,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000011"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000012",
+                  "name": "L_Core1",
+                  "origin": [
+                    0.31,
+                    1.65,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000013"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000014",
+                  "name": "L_Core2",
+                  "origin": [
+                    0.31,
+                    2.4,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000015"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000016",
+                  "name": "L_Core3",
+                  "origin": [
+                    0.31,
+                    3.15,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000017"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000018",
+                  "name": "L_Core4",
+                  "origin": [
+                    0.31,
+                    3.9,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000019"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-00000000001a",
+                  "name": "L_Core5",
+                  "origin": [
+                    0.31,
+                    4.65,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-00000000001b"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-00000000001c",
+                  "name": "L_Core6",
+                  "origin": [
+                    0.31,
+                    5.4,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-00000000001d"
+                  ]
+                }
+              ]
+            },
+            {
+              "uuid": "00000000-0000-4000-8000-00000000001e",
+              "name": "R_Stick",
+              "origin": [
+                -0.31,
+                0.2250000000000001,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                1.799119561941137
+              ],
+              "export": true,
+              "children": [
+                {
+                  "uuid": "00000000-0000-4000-8000-00000000001f",
+                  "name": "R_Grip",
+                  "origin": [
+                    -0.31,
+                    6.225,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000020"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000021",
+                  "name": "R_Shaft0",
+                  "origin": [
+                    -0.31,
+                    3.1,
+                    0.234375
+                  ],
+                  "rotation": [
+                    1.707458612567308,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000022"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000023",
+                  "name": "R_Shaft1",
+                  "origin": [
+                    -0.075625,
+                    3.1,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    89.99999914622636,
+                    -1.7017297294605556
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000024"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000025",
+                  "name": "R_Shaft2",
+                  "origin": [
+                    -0.31,
+                    3.1,
+                    -0.234375
+                  ],
+                  "rotation": [
+                    -178.2925413874327,
+                    0,
+                    180
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000026"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000027",
+                  "name": "R_Shaft3",
+                  "origin": [
+                    -0.544375,
+                    3.1,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    -89.99999914622636,
+                    1.7017297294605556
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000028"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000029",
+                  "name": "R_Tip",
+                  "origin": [
+                    -0.31,
+                    0.3500000000000001,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-00000000002a"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-00000000002b",
+                  "name": "R_Core0",
+                  "origin": [
+                    -0.31,
+                    0.8500000000000001,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-00000000002c"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-00000000002d",
+                  "name": "R_Core1",
+                  "origin": [
+                    -0.31,
+                    1.6,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-00000000002e"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-00000000002f",
+                  "name": "R_Core2",
+                  "origin": [
+                    -0.31,
+                    2.35,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000030"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000031",
+                  "name": "R_Core3",
+                  "origin": [
+                    -0.31,
+                    3.1,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000032"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000033",
+                  "name": "R_Core4",
+                  "origin": [
+                    -0.31,
+                    3.85,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000034"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000035",
+                  "name": "R_Core5",
+                  "origin": [
+                    -0.31,
+                    4.6,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000036"
+                  ]
+                },
+                {
+                  "uuid": "00000000-0000-4000-8000-000000000037",
+                  "name": "R_Core6",
+                  "origin": [
+                    -0.31,
+                    5.35,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "export": true,
+                  "children": [
+                    "00000000-0000-4000-8000-000000000038"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "animations": [],
+  "textures": [
+    {
+      "uuid": "00000000-0000-4000-8000-000000000039",
+      "id": "0",
+      "name": "chopsticks.png",
+      "source": "data:image/png;base64,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gAQAAAiocB2AYX9Q68Dd3m6t/XvdevVHg36p37t99dKjvO1lv/9oNMrdXvb7X7h8zToEACycDgAABCQAAEBAAgAABCQAAEBAAgAABCQAAEBAAgAABCQAFNjYbNXav9Nea+ZEAGAOBAAACEgAAICABAAACKgwAKQeA2936tVfb23W2h8AlpkOAAAEJAAAQEACAAAEdCL1CaR27uKVldTnAACLpgMAAAEJAAAQkAAAAAEJAAAQkAAAAAEJAAAQkAAAAAEVrgMw7A9qHbjb2621f69br/5o0C/1e7evXnqUt73s9x+NRrnby37/C5evWYcAgIXTAQCAgAQAAAhIAACAgAQAAAhIAACAgAQAAAhIAACAgASAAhubrVr7d9przZwIAMyBAAAAAQkAABCQAAAAARUGgNRj4O1Ovfrrrc1a+wPAMtMBAICABAAACEgAAICATqQ+gdTOXbyykvocAGDRdAAAICABAAACEgAAICABAAACEgAAICABAAACEgAAIKDCdQCG/UGtA3d7u7X273Xr1R8N+qV+7/bVS4/ytpf9/qPRKHd72e9/4fI16xAAsHA6AAAQkAAAAAEJAAAQkAAAAAEJAAAQkAAAAAEJAAAQkABQYGOzVWv/TnutmRMBgDkQAAAgIAEAAAISAAAgoMIAkHoMvN2pV3+9tVlrfwBYZjoAABCQAAAAAQkAABDQidQnkNq5i1dWUp8DACyaDgAABCQAAEBAAgAABCQAAEBAAgAABCQAAEBAAgAABFS4DsCwP6h14G5vt9b+vW69+qNBv9Tv3b566VHe9rLffzQa5W4v+/0vXL5mHQIAFk4HAAACEgAAICABAAACEgAAICABAAACEgAAICABAAACEgAKbGy2au3faa81cyIAMAcCAAAEJAAAQEACAAAEVBgAUo+Btzv16q+3NmvtDwDLTAcAAAISAAAgIAEAAAI6kfoEUjt38cpK6nMAgEXTAQCAgAQAAAhIAACAgAQAAAhIAACAgAQAAAhIAACAgArXARj2B7UO3O3t1tq/161XfzTol/q921cvPcrbXvb7j0aj3O1lv/+Fy9esQwDAwukAAEBAAgAABCQAAEBAAgAABCQAAEBAAgAABCQAAEBAAkCBjc1Wrf077bVmTgQA5kAAAICABAAACEgAAICACgNA6jHwdqde/fXWZq39AWCZ6QAAQEACAAAEJAAAQEAnUp9AaucuXllJfQ4AsGg6AAAQkAAAAAEJAAAQkAAAAAEJAAAQkAAAAAEJAAAQUOE6AMP+oNaBu73dWvv3uvXqjwb9Ur93++qlR3nby37/0WiUu73s979w+Zp1CABYOB0AAAhIAACAgAQAAAhIAACAgAQAAAhIAACAgAQAAAhIACiwsdmqtX+nvdbMiQDAHAgAABCQAAAAAQkAABBQYQBIPQbe7tSrv97arLU/ACwzHQAACEgAAICABAAACOhE6hNI7dzFKyupzwEAFk0HAAACEgAAICABAAACEgAAICABAAACEgAAICABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICnyv8BnuRszBraKWUAAAFfdEVYdG15cmxpbi1idWlsZC1wYXNzZXMAeyJwYXNzZXMiOnsiY29wbGFuYXJTZXBhcmF0aW9uIjp7Im1vZHVsZVNoYTI1NiI6ImRhNWE4YmEwMzJiZDdhMTYzN2I0Nzk5ZDMxYTY2MjY4NDdlYzk0MTJjMWZkYTQ3NTZhMDMxNzNiMTQ4M2NjYWMiLCJ2ZXJzaW9uIjoic21hbGxlci1mYWNlLW9uZS1zaWRlZC1jaGlsZGxlc3MtdjMifSwic3RydXRGcmFtZSI6eyJtb2R1bGVTaGEyNTYiOiIwMmE0M2U5Zjc1NjBiYzJmMDE5NTMwYzY1ZjAyYjllNTgzMzkyMWEzMWQ0YmI2OWNmNTFhN2VlOTkzYzg1Yzg5IiwidmVyc2lvbiI6InBhcmVudC1mcmFtZS12MSJ9fSwic2NoZW1hIjoibXlybGluLm5hdGl2ZS1idWlsZC1wYXNzZXMudjEifc3lBPUAAAAASUVORK5CYII=",
+      "internal": true,
+      "mode": "bitmap",
+      "uv_width": 512,
+      "uv_height": 512
+    }
+  ],
+  "myrlin": {
+    "target": "blockbench_generic",
+    "modelScale": 0.25,
+    "sourceBoneNames": {
+      "Origin": "Origin",
+      "Display": "Display",
+      "L_Stick": "L_Stick",
+      "L_Grip": "L_Grip",
+      "L_Shaft0": "L_Shaft0",
+      "L_Shaft1": "L_Shaft1",
+      "L_Shaft2": "L_Shaft2",
+      "L_Shaft3": "L_Shaft3",
+      "L_Tip": "L_Tip",
+      "L_Core0": "L_Core0",
+      "L_Core1": "L_Core1",
+      "L_Core2": "L_Core2",
+      "L_Core3": "L_Core3",
+      "L_Core4": "L_Core4",
+      "L_Core5": "L_Core5",
+      "L_Core6": "L_Core6",
+      "R_Stick": "R_Stick",
+      "R_Grip": "R_Grip",
+      "R_Shaft0": "R_Shaft0",
+      "R_Shaft1": "R_Shaft1",
+      "R_Shaft2": "R_Shaft2",
+      "R_Shaft3": "R_Shaft3",
+      "R_Tip": "R_Tip",
+      "R_Core0": "R_Core0",
+      "R_Core1": "R_Core1",
+      "R_Core2": "R_Core2",
+      "R_Core3": "R_Core3",
+      "R_Core4": "R_Core4",
+      "R_Core5": "R_Core5",
+      "R_Core6": "R_Core6"
+    },
+    "unitsPerBlock": 64,
+    "sizing": {
+      "kind": "item",
+      "unitsPerBlock": 64,
+      "source": "hytale_plan"
+    },
+    "source": {
+      "assetId": "347e11bd-aa59-4727-9b84-1cfb2d9fbd65",
+      "versionId": "9d9618c7-d998-409d-8a1c-8f6971fee37c",
+      "version": 1
+    }
+  }
+}

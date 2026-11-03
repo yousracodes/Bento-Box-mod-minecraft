@@ -11,7 +11,10 @@ public final class BentoMenu extends AbstractContainerMenu {
     public final int compartments;
     private final BentoBlockEntity bento;
     private final BlockPos pos;
-    public int inventoryY() { return 48 + (compartments / 3) * 30; }
+    public int columns() { return compartments == 4 ? 2 : 3; }
+    public int foodSlotX(int slot) { return 77 + (3 - columns()) * 15 + (slot % columns()) * 30; }
+    public int foodSlotY(int slot) { return 32 + (slot / columns()) * 30; }
+    public int inventoryY() { return 48 + (compartments / columns()) * 30; }
     public BentoMenu(int id, Inventory inventory, FriendlyByteBuf data) {
         this(id, inventory, data.readBlockPos(), data.readVarInt(), null);
     }
@@ -20,12 +23,12 @@ public final class BentoMenu extends AbstractContainerMenu {
     }
     private BentoMenu(int id, Inventory inventory, BlockPos pos, int size, BentoBlockEntity bento) {
         super(ModContent.MENU.get(), id);
-        if (size != 6 && size != 9) throw new IllegalArgumentException("Invalid bento capacity");
+        if (size != 4 && size != 6 && size != 9) throw new IllegalArgumentException("Invalid bento capacity");
         this.compartments = size;
         this.bento = bento;
         this.pos = pos;
         IItemHandler handler = bento == null ? new ItemStackHandler(size) : bento.contents;
-        for (int i=0; i<size; i++) addSlot(new SlotItemHandler(handler, i, 77 + (i%3)*30, 32 + (i/3)*30) {
+        for (int i=0; i<size; i++) addSlot(new SlotItemHandler(handler, i, foodSlotX(i), foodSlotY(i)) {
             @Override public boolean mayPlace(ItemStack stack) { return BentoBlockEntity.validFood(stack); }
             @Override public void setChanged() {
                 super.setChanged();

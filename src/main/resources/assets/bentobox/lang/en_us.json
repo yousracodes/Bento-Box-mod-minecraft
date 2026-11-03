@@ -4,5 +4,15 @@
   "item.bentobox.deluxe_bento": "Cherry Deluxe Bento Box",
   "container.bentobox.bento": "Bento Box",
   "block.bentobox.classic_bento": "Cherry Classic Bento Box",
-  "block.bentobox.deluxe_bento": "Cherry Deluxe Bento Box"
+  "block.bentobox.deluxe_bento": "Cherry Deluxe Bento Box",
+  "item.bentobox.compact_bento": "Cherry Compact Bento Box",
+  "block.bentobox.compact_bento": "Cherry Compact Bento Box",
+  "item.bentobox.wooden_chopsticks": "Wooden Chopsticks",
+  "item.bentobox.wooden_chopsticks.tooltip": "Right-click food in an open bento to pick up one serving.",
+  "item.bentobox.wooden_chopsticks.loaded_tooltip": "Hold right-click away from the bento to eat.",
+  "item.bentobox.wooden_chopsticks.holding": "Holding: %s",
+  "item.bentobox.wooden_chopsticks.remove_tooltip": "Right-click a compartment to return food; Shift + right-click in air to remove it.",
+  "item.bentobox.wooden_chopsticks.no_room": "This compartment is full or holds a different food.",
+  "item.bentobox.wooden_chopsticks.full": "You are full. Shift + right-click in air to remove the food.",
+  "item.bentobox.wooden_chopsticks.unloaded": "Removed food from the chopsticks."
 }

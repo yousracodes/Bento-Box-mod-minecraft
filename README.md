@@ -37,11 +37,12 @@ For Linux/macOS use `sh gradlew build` or `sh gradlew runClient` with JDK 17.
 
 ## Animated cherry bento models
 
-Classic (6 compartments) and Deluxe (9 compartments) use the supplied Blockbench
+Compact (4 compartments), Classic (6 compartments) and Deluxe (9 compartments) use the supplied Blockbench
 geometry and embedded textures. No GeckoLib dependency is needed.
-Find both items in the Bento Box creative tab (also available in Food & Drinks), or use:
+Find all three items in the Bento Box creative tab (also available in Food & Drinks), or use:
 
 ```mcfunction
+/give @s bentobox:compact_bento
 /give @s bentobox:classic_bento
 /give @s bentobox:deluxe_bento
 ```
@@ -53,7 +54,7 @@ both hands, dropped items, and F3+T resource reloading when reviewing in-game.
 Right-click a block face with a bento to place it. Placed boxes face the player.
 
 - **Shift + right-click a placed box:** toggle its animated lid, even with an item held.
-- **Right-click a placed box:** open its food inventory (Classic 3x2, Deluxe 3x3).
+- **Right-click a placed box:** open its food inventory (Compact 2x2, Classic 3x2, Deluxe 3x3).
 - **Left-click a placed box:** drop it as a single item, keeping its food and appearance.
 
 The cherry-themed GUI includes the player's inventory and hotbar. Standard clicking,
@@ -115,9 +116,9 @@ inside either placed bento. Open its lid to see the block, then increase the cou
 to two to check the texture-pile fallback. The catalog is in
 `docs/displaydelight-food-catalog.md`; installed mod versions control the actual
 available associations. Other Display Delight versions may require bridge updates.
-Eating directly from the box and crafting are not implemented yet.
+Bento box crafting is not implemented yet.
 
-Run `.\bento.bat runGameTestServer` for the server integration tests covering both
+Run `.\bento.bat runGameTestServer` for the server integration tests covering all three
 capacities, food validation, stack limits, NBT persistence, shift-click transfers,
 pickup drops, and menu invalidation. Test sources are excluded from the release JAR.
 
@@ -125,9 +126,59 @@ The import script `tools/import_models.py` converts the two original `.bbmodel`
 files into render meshes and extracts their embedded PNGs. Originals are untouched.
 To reimport, run `python tools/import_models.py <6-slot.bbmodel> <9-slot.bbmodel>`.
 
+The Compact mesh is derived from Classic by removing the middle column and shortening
+the body and animated lid by six model units (about 27% narrower). It reuses the
+cherry textures and keeps the same compartment depth and height. After reimporting
+the originals, run `python tools/make_compact_model.py` to regenerate it.
+
 Future assets go in `src/main/resources/assets/bentobox/` and recipes/data go in
 `src/main/resources/data/bentobox/`.
 A development server requires accepting Minecraft's EULA in `run/eula.txt` after
 its initial launch. Only accept it after reading and agreeing to it.
 
 Official documentation: https://docs.minecraftforge.net/en/1.20.1/gettingstarted/
+
+## Wooden chopsticks
+
+Craft two sticks together (shapeless) for reusable wooden chopsticks, find them
+in the Bento Box or Food & Drinks creative tab, or use
+`/give @s bentobox:wooden_chopsticks`.
+
+Place a bento and shift + right-click to open its lid. With empty chopsticks,
+right-click a food compartment once to transfer one serving onto the chopsticks.
+The food appears between the tips and in the tooltip. Picking up food does not eat
+it or require hunger. Right-click an empty compartment or a matching food stack with room to put the
+serving back. Full or incompatible compartments leave it on the chopsticks.
+
+Then hold right-click away from the bento with the loaded chopsticks to eat: you can walk
+away, look away, or close/pick up the original bento. Eating uses the food's normal
+duration, hunger, saturation, effects, and consumption behavior. Leftover bowls or
+bottles go into your inventory (or drop if it is full). Releasing right-click cancels
+eating and keeps the serving on the chopsticks. Full players can only eat foods
+that normally allow it. The chopsticks remain reusable after eating.
+
+Carried food and its NBT persist when switching items, dropping/picking up the
+chopsticks, and saving/reloading. The serving leaves the bento when picked up, so
+players sharing a box cannot take the same last serving. Creative pickup copies a
+serving without reducing the box's contents. Empty hands still open the usual
+inventory; shift + right-click still toggles the lid.
+
+The chopsticks use the supplied `models/chopsticks-v1-blockbench.bbmodel`, including
+its embedded texture, tapered geometry, and diagonal presentation. Each stick pivots
+at its grip and opens over six ticks when food is picked up. The actual carried food
+appears centered between the spreading tips, in inventory, hand, dropped-item, and
+item-frame views. Eating empties the chopsticks and returns them to the resting pose.
+The mesh and texture reload with F3+T. Regenerate these assets with
+`python tools/import_chopsticks.py` after editing the source model.
+
+Hand views anchor the thick grip ends inside the player's palm. In third person,
+the sticks extend forward and slightly downward with the food between their tips;
+left-hand transforms mirror the right-hand pose. First-person views place the grips
+near the lower hand and angle the tips toward the center of the screen. The source
+model's diagonal Display pose is used for inventory, ground, and frame presentation.
+
+To remove carried food without a bento, Shift + right-click in the air. The serving
+moves into your inventory, or drops beside you if it is full. This preserves food
+NBT and does not require hunger. Shift + right-click on a bento still toggles its
+lid. Normal eating still requires hunger (except always-edible foods); an action-bar
+message explains when a full hunger bar prevents eating.

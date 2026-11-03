@@ -35,7 +35,7 @@ public final class BentoScreen extends AbstractContainerScreen<BentoMenu> {
         for(int i=0;i<6;i++) g.fill(x+190+i*4,y+25-i*3,x+196+i*4,y+28-i*3,0xFF765449);
         flower(g,x+194,y+18); flower(g,x+210,y+10); flower(g,x+204,y+29);
         flower(g,x+25,y+65); flower(g,x+202,y+73);
-        for(int i=0;i<menu.compartments;i++) slot(g,x+70+(i%3)*30,y+25+(i/3)*30,30);
+        for(int i=0;i<menu.compartments;i++) slot(g,x+menu.foodSlotX(i)-7,y+menu.foodSlotY(i)-7,30);
         for(int row=0;row<3;row++) for(int col=0;col<9;col++) slot(g,x+15+col*22,y+menu.inventoryY()-2+row*22,20);
         for(int col=0;col<9;col++) slot(g,x+15+col*22,y+menu.inventoryY()+70,20);
         // Rice ball and cat ears sit beside the food compartments.

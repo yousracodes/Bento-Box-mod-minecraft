@@ -47,6 +47,7 @@ public final class BentoBlockEntity extends BlockEntity implements MenuProvider 
         return result;
     }
     public float openness(double time) { return BentoBoxItem.openness(storedBox(), time); }
+    public boolean isLidOpen() { return storedBox().getOrCreateTag().getBoolean(BentoBoxItem.OPEN); }
     public void toggleLid() {
         var stack = storedBox();
         float from = BentoBoxItem.openness(stack, level.getGameTime());

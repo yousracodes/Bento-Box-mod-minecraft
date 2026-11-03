@@ -18,6 +18,8 @@ public final class ModCreativeTabs {
             .icon(() -> new ItemStack(ModItems.CLASSIC.get()))
             .withTabsBefore(CreativeModeTabs.FOOD_AND_DRINKS)
             .displayItems((parameters, output) -> {
+                output.accept(ModItems.CHOPSTICKS.get());
+                output.accept(ModItems.COMPACT.get());
                 output.accept(ModItems.CLASSIC.get());
                 output.accept(ModItems.DELUXE.get());
             })

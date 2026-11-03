@@ -50,6 +50,8 @@ public final class BentoGameTests {
         h.succeed();
     }
     @GameTest(template = "empty")
+    public static void compact(GameTestHelper helper) { check(helper, 4); }
+    @GameTest(template = "empty")
     public static void classic(GameTestHelper helper) { check(helper, 6); }
     @GameTest(template = "empty")
     public static void deluxe(GameTestHelper helper) { check(helper, 9); }
@@ -57,7 +59,7 @@ public final class BentoGameTests {
     private static void check(GameTestHelper h, int count) {
         var level = h.getLevel();
         var pos = h.absolutePos(new BlockPos(1,1,1));
-        var block = count == 6 ? ModContent.CLASSIC.get() : ModContent.DELUXE.get();
+        var block = count == 4 ? ModContent.COMPACT.get() : count == 6 ? ModContent.CLASSIC.get() : ModContent.DELUXE.get();
         level.setBlock(pos, block.defaultBlockState(), 3);
         var box = (BentoBlockEntity)level.getBlockEntity(pos);
         ItemStack namedBox = new ItemStack(block.asItem());

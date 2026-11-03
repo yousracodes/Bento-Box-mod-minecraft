@@ -2,6 +2,7 @@ package com.bentobox.client;
 
 import com.bentobox.BentoBlock;
 import com.bentobox.BentoBlockEntity;
+import com.bentobox.BentoCompartments;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
@@ -28,8 +29,8 @@ public final class BentoFoodRenderer {
             int maximum = Math.max(1, stack.getMaxStackSize());
             int layers = maximum == 1 ? 1 : 1 + (int)Math.ceil(
                 Math.min(stack.getCount() - 1, maximum - 1) * 5.0 / (maximum - 1));
-            float x = (slot % 3 - 1) * (deluxe ? 4.5F : 6.25F);
-            float z = deluxe ? (slot / 3 - 1) * 4F : (slot / 3 == 0 ? -3.25F : 3.25F);
+            float x = BentoCompartments.x(box.contents.getSlots(), slot);
+            float z = BentoCompartments.z(box.contents.getSlots(), slot);
             float size = deluxe ? 2.8F : 3.9F;
             var display = BentoFoodDisplays.INSTANCE.find(stack);
             if (display.isPresent()) {

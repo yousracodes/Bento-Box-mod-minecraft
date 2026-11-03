@@ -29,6 +29,7 @@ public final class BentoBlock extends BaseEntityBlock {
         registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
     public int compartments() { return compartments; }
+    public String model() { return compartments == 4 ? "compact_bento" : compartments == 6 ? "classic_bento" : "deluxe_bento"; }
     // The imported Classic is wider in model units; normalize each size separately.
     public static float renderScale(int compartments) { return compartments == 9 ? 0.87F : 0.58F; }
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) { builder.add(FACING); }
@@ -38,7 +39,7 @@ public final class BentoBlock extends BaseEntityBlock {
     @Override public RenderShape getRenderShape(BlockState state) { return RenderShape.ENTITYBLOCK_ANIMATED; }
     @Override public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         float scale = renderScale(compartments);
-        double width = (compartments == 9 ? 16.5 : 22.1) * scale;
+        double width = (compartments == 9 ? 16.5 : compartments == 4 ? 16.1 : 22.1) * scale;
         double depth = (compartments == 9 ? 15.825 : 16.865) * scale;
         if (state.getValue(FACING).getAxis() == Direction.Axis.X) {
             double swap = width;
@@ -52,6 +53,12 @@ public final class BentoBlock extends BaseEntityBlock {
         if (level.getBlockEntity(pos) instanceof BentoBlockEntity bento) bento.setBox(stack);
     }
     @Override public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (!player.isShiftKeyDown() && hand == InteractionHand.MAIN_HAND
+                && !(player.getMainHandItem().getItem() instanceof ChopsticksItem)
+                && player.getOffhandItem().getItem() instanceof ChopsticksItem) return InteractionResult.PASS;
+        if (!player.isShiftKeyDown() && player.getItemInHand(hand).getItem() instanceof ChopsticksItem sticks
+                && level.getBlockEntity(pos) instanceof BentoBlockEntity box)
+            return sticks.interactWithBento(player, hand, box, hit);
         if (!level.isClientSide && level.getBlockEntity(pos) instanceof BentoBlockEntity bento) {
             if (player.isShiftKeyDown()) bento.toggleLid();
             else if (player instanceof ServerPlayer serverPlayer) NetworkHooks.openScreen(serverPlayer, bento, buffer -> {

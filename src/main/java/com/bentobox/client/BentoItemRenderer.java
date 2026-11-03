@@ -68,7 +68,7 @@ public final class BentoItemRenderer extends BlockEntityWithoutLevelRenderer {
         Mesh mesh = meshes.computeIfAbsent(name, this::load);
         pose.pushPose();
         pose.translate(0.5, height, 0.5);
-        float scale = BentoBlock.renderScale(name.equals("deluxe_bento") ? 9 : 6) / 16;
+        float scale = BentoBlock.renderScale(name.equals("deluxe_bento") ? 9 : name.equals("compact_bento") ? 4 : 6) / 16;
         pose.scale(scale, scale, scale);
         for (boolean lid : new boolean[]{false, true}) {
             pose.pushPose();
