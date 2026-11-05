@@ -1,0 +1,16 @@
+{
+    "ingredients":  [
+                        {
+                            "item":  "minecraft:stick"
+                        },
+                        {
+                            "item":  "minecraft:pink_petals"
+                        }
+                    ],
+    "category":  "misc",
+    "result":  {
+                   "count":  1,
+                   "item":  "bentobox:blossom_food_pick"
+               },
+    "type":  "minecraft:crafting_shapeless"
+}

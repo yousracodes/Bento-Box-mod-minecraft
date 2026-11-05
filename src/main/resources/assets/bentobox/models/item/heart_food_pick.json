@@ -1,0 +1,6 @@
+{
+    "textures":  {
+                     "layer0":  "bentobox:item/heart_food_pick"
+                 },
+    "parent":  "minecraft:item/generated"
+}

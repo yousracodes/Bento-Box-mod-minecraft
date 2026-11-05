@@ -1,0 +1,16 @@
+{
+    "ingredients":  [
+                        {
+                            "item":  "minecraft:stick"
+                        },
+                        {
+                            "item":  "minecraft:brown_wool"
+                        }
+                    ],
+    "category":  "misc",
+    "result":  {
+                   "count":  1,
+                   "item":  "bentobox:bear_food_pick"
+               },
+    "type":  "minecraft:crafting_shapeless"
+}

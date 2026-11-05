@@ -60,8 +60,9 @@ Right-click a block face with a bento to place it. Placed boxes face the player.
 The GUI uses Minecraft's standard gray container frame, 18-pixel slot spacing,
 player inventory, and hotbar, while retaining the bento, blossom, cat, and rice-ball
 pixel decorations. Standard clicking,
-dragging and shift-clicking transfer food. Non-food items and nested bentos are
-rejected; normal stack limits and item NBT are preserved. Storage persists through
+dragging and shift-clicking transfer food. Food mode rejects non-food items and
+nested bentos; decoration mode accepts reusable food picks. Normal food stack
+limits and item NBT are preserved. Storage persists through
 world saves, dropping, picking up and placing again. Removing a box invalidates
 its open menus. Lid state is independent of whether the inventory screen is open.
 Open placed boxes display the stored food icons inside their matching compartments.
@@ -188,3 +189,38 @@ moves into your inventory, or drops beside you if it is full. This preserves foo
 NBT and does not require hunger. Shift + right-click on a bento still toggles its
 lid. Normal eating still requires hunger (except always-edible foods); an action-bar
 message explains when a full hunger bar prevents eating.
+
+## Reusable food picks
+
+Each food compartment has its own decoration slot: four on Compact, six on Classic,
+and nine on Deluxe. Open the bento inventory and press **Decorate** to switch the
+same grid to pick slots; press **Food** to return. Empty your cursor before switching.
+The standard gray Minecraft GUI and the existing pixel decorations remain.
+
+Place one pick in each decoration slot. Normal clicking, dragging, and shift-clicking
+work in the selected mode. Pick slots only accept picks and hold one each; food slots
+keep their usual food-only rules. Hovering food shows the pick assigned to it.
+
+Open placed bentos show their picks slightly tilted beside the corresponding food.
+Picks are hidden under a closed lid or in an empty food compartment, and reappear
+when food is added. Taking/eating food with chopsticks leaves the reusable pick in
+the bento. Picks and their NBT survive world saves, drops, and replacing the box.
+Older bentos start with empty decoration slots. Every open menu has its own mode.
+
+All seven designs use the supplied PNG textures and are available in both the Bento
+Box and Food & Drinks creative tabs. Each has its own shapeless crafting recipe,
+producing **one pick**; the recipe book unlocks when you collect its main material.
+
+| Pick | Ingredients | Item ID |
+| --- | --- | --- |
+| Bunny | Stick + white wool + pink dye | `bentobox:bunny_food_pick` |
+| Bear | Stick + brown wool | `bentobox:bear_food_pick` |
+| Bow | Stick + red wool | `bentobox:bow_food_pick` |
+| Star | Stick + gold nugget | `bentobox:star_food_pick` |
+| Clover | Stick + lime dye + wheat seeds | `bentobox:clover_food_pick` |
+| Heart | Stick + red dye + poppy | `bentobox:heart_food_pick` |
+| Blossom | Stick + pink petals | `bentobox:blossom_food_pick` |
+
+The decoration integration tests check all three capacities, one-pick limits,
+food/pick validation, inactive-slot protection, mode changes, shift-click transfers,
+NBT/save/drop persistence, old saves, and all seven recipe matches.

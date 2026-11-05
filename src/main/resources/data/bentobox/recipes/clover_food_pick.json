@@ -1,0 +1,19 @@
+{
+    "ingredients":  [
+                        {
+                            "item":  "minecraft:stick"
+                        },
+                        {
+                            "item":  "minecraft:lime_dye"
+                        },
+                        {
+                            "item":  "minecraft:wheat_seeds"
+                        }
+                    ],
+    "category":  "misc",
+    "result":  {
+                   "count":  1,
+                   "item":  "bentobox:clover_food_pick"
+               },
+    "type":  "minecraft:crafting_shapeless"
+}

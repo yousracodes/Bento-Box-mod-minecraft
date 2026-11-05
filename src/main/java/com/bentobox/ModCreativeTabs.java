@@ -22,6 +22,7 @@ public final class ModCreativeTabs {
                 output.accept(ModItems.COMPACT.get());
                 output.accept(ModItems.CLASSIC.get());
                 output.accept(ModItems.DELUXE.get());
+                ModItems.FOOD_PICKS.forEach(pick -> output.accept(pick.get()));
             })
             .build());
 }

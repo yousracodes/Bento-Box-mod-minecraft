@@ -1,0 +1,19 @@
+{
+    "ingredients":  [
+                        {
+                            "item":  "minecraft:stick"
+                        },
+                        {
+                            "item":  "minecraft:red_dye"
+                        },
+                        {
+                            "item":  "minecraft:poppy"
+                        }
+                    ],
+    "category":  "misc",
+    "result":  {
+                   "count":  1,
+                   "item":  "bentobox:heart_food_pick"
+               },
+    "type":  "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,19 @@
+{
+    "ingredients":  [
+                        {
+                            "item":  "minecraft:stick"
+                        },
+                        {
+                            "item":  "minecraft:white_wool"
+                        },
+                        {
+                            "item":  "minecraft:pink_dye"
+                        }
+                    ],
+    "category":  "misc",
+    "result":  {
+                   "count":  1,
+                   "item":  "bentobox:bunny_food_pick"
+               },
+    "type":  "minecraft:crafting_shapeless"
+}

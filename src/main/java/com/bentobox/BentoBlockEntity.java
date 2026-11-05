@@ -16,10 +16,16 @@ public final class BentoBlockEntity extends BlockEntity implements MenuProvider 
     private ItemStack box = ItemStack.EMPTY;
     private boolean loading;
     public final ItemStackHandler contents;
+    public final ItemStackHandler decorations;
     public BentoBlockEntity(BlockPos pos, BlockState state) {
         super(ModContent.BENTO.get(), pos, state);
         contents = new ItemStackHandler(((BentoBlock)state.getBlock()).compartments()) {
             @Override public boolean isItemValid(int slot, ItemStack stack) { return validFood(stack); }
+            @Override protected void onContentsChanged(int slot) { if (!loading) changed(); }
+        };
+        decorations = new ItemStackHandler(((BentoBlock)state.getBlock()).compartments()) {
+            @Override public boolean isItemValid(int slot, ItemStack stack) { return stack.getItem() instanceof FoodPickItem; }
+            @Override public int getSlotLimit(int slot) { return 1; }
             @Override protected void onContentsChanged(int slot) { if (!loading) changed(); }
         };
     }
@@ -40,10 +46,14 @@ public final class BentoBlockEntity extends BlockEntity implements MenuProvider 
         var data = box.getOrCreateTag().getCompound("BentoContents").copy();
         data.putInt("Size", ((BentoBlock)getBlockState().getBlock()).compartments());
         contents.deserializeNBT(data);
+        var picks = box.getOrCreateTag().getCompound("BentoDecorations").copy();
+        picks.putInt("Size", ((BentoBlock)getBlockState().getBlock()).compartments());
+        decorations.deserializeNBT(picks);
     }
     public ItemStack boxStack() {
         ItemStack result = storedBox().copy();
         result.getOrCreateTag().put("BentoContents", contents.serializeNBT());
+        result.getOrCreateTag().put("BentoDecorations", decorations.serializeNBT());
         return result;
     }
     public float openness(double time) { return BentoBoxItem.openness(storedBox(), time); }

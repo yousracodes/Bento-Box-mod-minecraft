@@ -18,6 +18,7 @@ public final class BentoBlockRenderer implements BlockEntityRenderer<BentoBlockE
         pose.translate(-0.5,0,-0.5);
         BentoItemRenderer.instance().renderModel(name, open, pose, buffers, light, overlay, 0);
         BentoFoodRenderer.render(box, open, pose, buffers, light, overlay);
+        BentoDecorationRenderer.render(box, open, pose, buffers, light, overlay);
         pose.popPose();
     }
 }

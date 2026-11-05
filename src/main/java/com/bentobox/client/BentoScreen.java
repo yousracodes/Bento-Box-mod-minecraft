@@ -2,6 +2,8 @@ package com.bentobox.client;
 
 import com.bentobox.BentoMenu;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -10,6 +12,7 @@ import net.minecraft.world.entity.player.Inventory;
 /** Vanilla container frame and slots, with the bento's pixel decorations retained. */
 public final class BentoScreen extends AbstractContainerScreen<BentoMenu> {
     private static final ResourceLocation CONTAINER = new ResourceLocation("minecraft", "textures/gui/container/generic_54.png");
+    private Button modeButton;
 
     public BentoScreen(BentoMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
@@ -21,9 +24,17 @@ public final class BentoScreen extends AbstractContainerScreen<BentoMenu> {
         inventoryLabelY = menu.inventoryY() - 11;
     }
 
+    @Override protected void init() {
+        super.init();
+        modeButton = addRenderableWidget(Button.builder(Component.translatable("container.bentobox.decorate"), button -> {
+            if (minecraft.gameMode != null) minecraft.gameMode.handleInventoryButtonClick(menu.containerId, 0);
+        }).bounds(leftPos+8, topPos+19, 76, 16).build());
+        modeButton.setTooltip(Tooltip.create(Component.translatable("container.bentobox.pick_help")));
+    }
+
     @Override protected void renderBg(GuiGraphics g, float partialTick, int mouseX, int mouseY) {
         int x = leftPos, y = topPos;
-        int trayHeight = (menu.compartments / menu.columns()) * 18;
+        int trayHeight = 20 + (menu.compartments / menu.columns()) * 18;
         // Use Minecraft's own frame, inset slots, inventory, and hotbar textures.
         g.blit(CONTAINER, x, y, 0, 0, imageWidth, 17);
         g.fill(x+7, y+17, x+169, y+17+trayHeight, 0xFFC6C6C6);
@@ -32,6 +43,8 @@ public final class BentoScreen extends AbstractContainerScreen<BentoMenu> {
         g.blit(CONTAINER, x, y+17+trayHeight, 0, 126, imageWidth, 96);
         for (int slot = 0; slot < menu.compartments; slot++)
             g.blit(CONTAINER, x+menu.foodSlotX(slot)-1, y+menu.foodSlotY(slot)-1, 7, 17, 18, 18);
+        g.drawString(font, Component.translatable(menu.decorating()
+            ? "container.bentobox.pick_slots" : "container.bentobox.food_slots"), x+91, y+23, 0x404040, false);
 
         // Small bento emblem beside the title.
         g.fill(x+8,y+5,x+27,y+16,0xFF6D393D);
@@ -43,8 +56,8 @@ public final class BentoScreen extends AbstractContainerScreen<BentoMenu> {
         for (int i=0;i<5;i++) g.fill(x+137+i*4,y+17-i*2,x+143+i*4,y+19-i*2,0xFF765449);
         flower(g,x+141,y+10);
         flower(g,x+155,y+4);
-        flower(g,x+23,y+25);
-        flower(g,x+146,y+25);
+        flower(g,x+23,y+45);
+        flower(g,x+146,y+45);
 
         // Cat and rice ball sit alongside the bottom row of food slots.
         int base = y+17+trayHeight-5;
@@ -66,8 +79,28 @@ public final class BentoScreen extends AbstractContainerScreen<BentoMenu> {
     }
 
     @Override public void render(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
+        if (modeButton != null) {
+            modeButton.setMessage(Component.translatable(menu.decorating()
+                ? "container.bentobox.food" : "container.bentobox.decorate"));
+            modeButton.active = menu.getCarried().isEmpty();
+        }
         renderBackground(g);
         super.render(g,mouseX,mouseY,partialTick);
         renderTooltip(g,mouseX,mouseY);
+    }
+
+    @Override protected void renderTooltip(GuiGraphics g, int mouseX, int mouseY) {
+        if (menu.getCarried().isEmpty() && hoveredSlot != null && hoveredSlot.hasItem()
+                && !menu.decorating() && hoveredSlot.index < menu.compartments) {
+            var pick = menu.decorationAt(hoveredSlot.index);
+            if (!pick.isEmpty()) {
+                var lines = new java.util.ArrayList<>(getTooltipFromContainerItem(hoveredSlot.getItem()));
+                lines.add(Component.translatable("container.bentobox.pick", pick.getHoverName())
+                    .withStyle(net.minecraft.ChatFormatting.GOLD));
+                g.renderTooltip(font, lines, java.util.Optional.empty(), mouseX, mouseY);
+                return;
+            }
+        }
+        super.renderTooltip(g, mouseX, mouseY);
     }
 }
